@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+
+@theme {
+    --primary: rgb(243, 96, 60); /* #f3603c */
+    --primary-shadow: rgba(3, 96, 60, 0.1);
+    --copy: #242D52;
+    --dark: #1D1E25;
+    --light: #FFF0EC;
+    --lightgray: #FAFAFA;
+
+    --desktop: 90rem; /* 1440px */
+    --mobile: 23.4375rem; /* 375px */
+
+    --desktop-container: 69.375rem; /* 1110px */
+    --mobile-container: 20.1875rem; /* 323px */
+
+    --bg-size: 37.5rem; /* 600px */
+    --bg-size-l: 50rem; /* 800px */
+    --bg-mobile-small: 25rem; /* 400px */
+
+    --text-13: 0.8125rem; /* 13px */
+    --text-40: 2.5rem; /* 40px */
+
+    --spacing-26: 1.625rem; /* 26px */
+
+    --tracking-29: -0.018125rem; /* -0.29px */
+
+    --vietnam: 'Be Vietnam Pro', sans-serif;
+
+    --bg-top: url("../images/bg-tablet-pattern.svg");
+}
+html {
+  font-size: 16px;
+}
+
+.background {
+  background-image: var(--bg-top);
+}
+.button {
+  background-color: var(--primary);
+  color: var(--light);
+  border-radius: 44px;
+  display: block;
+  box-shadow: 0px 5px 10px 1px rgba(243, 96, 60, 0.5);
+  font-weight: bold;
+  font-size: var(--text-13);
+}
+.start-button {
+  width: 137px;
+  height: 44px;
+}
+.contact-button {
+  width: 80px;
+  height: 44px;
+}
+
+@media (min-width: 1024px) {
+  .contact-button {
+    width: 64px;
+    height: 44px;
+  }
+}
+.contact-button-desktop {
+  width: 80px;
+  height: 44px;
+}
+.button:hover {
+  opacity: 0.5;
+}
+.slides-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+/* webkit */
+.slides-container::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.slide {
+  flex: 1 0 100%;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.attribution {
+  font-size: 11px; text-align: center;
+}
+
+.attribution a {
+  color: hsl(0, 45%, 44%);
+}
+
+.background-footer {
+  background: url("../images/bg-tablet-pattern.svg");
+  background-size: 400px;
+  background-repeat: no-repeat;
+}

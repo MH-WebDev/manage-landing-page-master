@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Manage landing page</title>
+
+
+  <link rel="stylesheet" href="./src/styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body class="text-(--copy) font-(family-name:--vietnam) lg:bg-(--light)" id="body">
+  <div class="hidden fixed w-full h-full left-0 bg-linear-to-b from-black/20 to-black z-40" id="navbar-overlay"></div>
+  <header class="w-(--mobile) lg:w-(--desktop) lg:bg-white mx-auto relative overflow-hidden">
+    <img src="./images/bg-tablet-pattern.svg" alt="Background pattern" class="absolute max-w-[800px] -top-28 -right-56 lg:-top-56 lg:-right-40 w-[550px] lg:w-[800px]">
+    <img src="./images/bg-tablet-pattern.svg" alt="Background pattern" class="absolute max-w-[600px] -bottom-0 -right-56 lg:hidden w-[350px]">
+    <div class="relative">
+        <nav class="w-(--mobile) lg:w-(--desktop-container) flex flex-row justify-between items-center mx-auto py-12 px-4 lg:px-0">
+          <img src="./images/logo.svg" alt="Manage logo">
+          <div class="lg:hidden z-50"><!-- MOBILE NAVBAR -->
+            <div class="relative w-[30px] h-[30px]" id="navigation-toggle">
+              <img src="./images/icon-hamburger.svg" alt="Hamburger icon" class="absolute w-[30px]" id="hamburger">
+              <img src="./images/icon-close.svg" alt="Close icon" class="hidden absolute w-[30px]" id="close">
+            </div>
+            <div class="hidden absolute left-0 right-0 bg-white text-center m-8 p-8 -tracking-tight" id="navi">
+              <div class="flex flex-col gap-6 font-bold mx-auto">
+                <a href="#">Pricing</a>
+                <a href="#">Product</a>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Community</a>
+              </div>
+            </div>
+          </div>
+          <div class="hidden lg:flex flex-row w-[75%] gap-6 z-50 items-center"><!-- DESKTOP NAVBAR -->
+            <div class="flex flex-row gap-12 mx-auto">
+              <a href="" class="text-13 hover:text-(--copy)/50">Pricing</a>
+              <a href="" class="text-13 hover:text-(--copy)/50">Product</a>
+              <a href="" class="text-13 hover:text-(--copy)/50">About Us</a>
+              <a href="" class="text-13 hover:text-(--copy)/50">Careers</a>
+              <a href="" class="text-13 hover:text-(--copy)/50">Community</a>
+            </div>
+            <div>
+              <button class="button start-button cursor-pointer">Get Started</button>
+            </div>
+          </div>
+        </nav>
+        <div class="w-(--mobile) lg:w-(--desktop-container) mx-auto text-center lg:text-left pb-24 ">
+          <div class="flex flex-col lg:flex-row-reverse items-center lg:gap-12">
+            <img src="./images/illustration-intro.svg" alt="Illustration of a team working together" class="lg:w-[540px]">
+            <div class="lg:mx-0">
+              <h1 class="text-40 lg:text-[56px] lg:leading-16 font-bold -tracking-[1px] leading-[50px]">Bring everyone together to build better products.</h1>
+              <p class="lg:text-base lg:pr-32 lg:pt-5 font-light leading-7 text-(--copy)/50 px-10 lg:px-0 py-4 lg:py-8">Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in view.</p>
+              <button class="button start-button mx-auto lg:mx-0">Get Started</button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </header>
+  <main class="lg:w-(--desktop) mx-auto lg:bg-white lg:bg-[url(/images/bg-tablet-pattern.svg)] bg-no-repeat bg-(length:--bg-size-l) bg-[-500px_18rem]">
+    <div class="lg:w-(--desktop-container) mx-auto lg:grid lg:grid-cols-2 gap-6 ">
+      <section class="mx-auto w-(--mobile) text-center lg:text-left lg:w-full ">
+        <h2 class="font-extrabold text-[30px] tracking[-0.62px] leading-11 lg:w-[445px]">What’s different about Manage?</h2>
+        <p class=" mx-auto lg:mx-0 text-sm leading-7 text-(--copy)/50 py-6 w-[300px]">Manage provides all the functionality your team needs, without the complexity. Our software is tailor-made for modern digital product teams.</p>
+      </section>
+      <section class="mx-auto w-(--mobile) lg:w-full ">
+        <!-- MAIN CONTENT SPLIT FOR MOBILE/DESKTOP LAYOUTS -->
+        <div class="lg:hidden"> <!-- MOBILE -->
+          <div class="bg-(--light) flex flex-row items-center justify-between ml-6 rounded-l-full font-bold lg:hidden">
+            <p class="bg-(--primary) text-white px-7 py-3 rounded-full">01</p>
+            <h4 class="text-center pr-4 tracking-29">Track company-wide progress</h4>
+          </div>
+          <p class="text-sm leading-7 text-(--copy)/50 px-2 pt-6 pb-12 lg:hidden">See how your day-to-day tasks fit into the wider vision. Go from tracking progress at the milestone level all the way done to the smallest of details. Never lose sight of the bigger picture again.</p>
+          <div class="bg-(--light) flex flex-row items-center justify-between ml-6 rounded-l-full font-bold lg:hidden">
+            <p class="bg-(--primary) text-white px-7 py-3 rounded-full">02</p>
+            <h4 class="text-center pr-4 tracking-29">Advanced built-in reports</h4>
+          </div>
+          <p class="text-sm leading-7 text-(--copy)/50 px-2 pt-6 pb-12 lg:hidden">Set internal delivery estimates and track progress toward company goals. Our customisable dashboard helps you build out the reports you need to keep key stakeholders informed.</p>          <div class="bg-(--light) flex flex-row items-center justify-between ml-6 rounded-l-full font-bold lg:hidden">
+            <p class="bg-(--primary) text-white px-7 py-3 rounded-full">03</p>
+            <h4 class="text-center pr-4 tracking-29">Everything you need in one place</h4>
+          </div>
+          <p class="text-sm leading-7 text-(--copy)/50 px-2 pt-6 pb-12 lg:hidden">Stop jumping from one service to another to communicate, store files, track tasks and share documents. Manage offers an all-in-one team productivity solution.</p>
+        </div>
+        <div class="hidden lg:block"><!-- DESKTOP -->
+          <div class="flex flex-row gap-6">
+            <div class="">
+              <p class="bg-(--primary) text-white w-[67px] text-center py-2 rounded-full">01</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-base py-2 tracking-29">Track company-wide progress</h4>
+              <p class="text-base leading-26 text-(--copy)/50 pt-2 pb-12">See how your day-to-day tasks fit into the wider vision. Go from tracking progress at the milestone level all the way done to the smallest of details. Never lose sight of the bigger picture again.</p>
+            </div>
+          </div>
+          <div class="hidden lg:flex flex-row gap-6">
+            <div>
+              <p class="bg-(--primary) text-white w-[67px] text-center py-2 rounded-full">02</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-base py-2 tracking-29">Advanced built-in reports</h4>
+              <p class="text-base leading-26 text-(--copy)/50 pt-2 pb-12">Set internal delivery estimates and track progress toward company goals. Our customisable dashboard helps you build out the reports you need to keep key stakeholders informed.</p>
+            </div>
+          </div>
+          <div class="hidden lg:flex flex-row gap-6">
+            <div>
+              <p class="bg-(--primary) text-white w-[67px] text-center py-2 rounded-full">03</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-base py-2 tracking-29">Everything you need in one place</h4>
+              <p class="text-base leading-26 text-(--copy)/50 pt-2 pb-12">Stop jumping from one service to another to communicate, store files, track tasks and share documents. Manage offers an all-in-one team productivity solution.</p>
+            </div>
+          </div>
+        </div>
+      </section> <!-- END OF MAIN CONTENT -->
+      <section class="mx-auto w-(--mobile) pt-10 pb-14 lg:col-span-2 lg:w-full "> <!-- CAROUSEL BEGIN -->
+        <h2 class="text-[32px] font-extrabold tracking-[-0.66px] leading-[45px] text-center pb-14">What they’ve said</h2>
+        <div id="slider-wrapper" class="py-10 relative m-3 h-[370px]">
+          <button class="slide-arrow text-4xl absolute top-0 bottom-0 bg-white cursor-pointer opacity-50 transition-opacity duration-100 hover:opacity-100 focus:opacity-100 left-0 pl-2 z-20" id="slider-previous">&#8249;</button>
+          <button class="slide-arrow text-4xl absolute top-0 bottom-0 bg-white cursor-pointer opacity-50 transition-opacity duration-100 hover:opacity-100 focus:opacity-100 right-0 pr-2 z-20" id="slider-next">&#8250;</button>
+          <ul class="slides-container relative flex flex-row w-full h-full list-none scroll-smooth" id="slides-container">
+            <!-- TESTAMONIAL SLIDER CONTENT -->
+          </ul>
+          <div id="indicator" class="flex justify-center gap-1 pt-4">
+
+          </div>
+        </div>
+        <div class="pt-8">
+          <button class="button start-button mx-auto">Get Started</button>
+        </div>
+      </section>
+    </div>
+
+  </main>
+  <footer class="bg-(--primary) lg:w-(--desktop) mx-auto">
+    <div class="relative overflow-hidden">
+      <img src="./images/bg-tablet-pattern.svg" alt="Footer top background" class="absolute -left-[335px] top-10 lg:left-52 lg:-top-20 opacity-10 w-[600px]">
+      <img src="./images/bg-tablet-pattern.svg" alt="Footer top background" class="hidden lg:block absolute -right-[350px] -top-[465px] opacity-10 w-[600px]">
+      <div class="relative mx-auto w-(--mobile) h-[405px] lg:h-[220px] lg:w-(--desktop-container) flex flex-col justify-center lg:flex-row lg:justify-between items-center gap-6 ">
+        <h3 class="text-40 lg:leading-[44px] lg:tracking-[-0.71px] lg:text-left lg:py-0 pb-8 text-center px-4 text-white font-bold lg:w-[500px] lg:block">Simplify how your team works today.</h3>
+        <button class="button start-button !text-(--primary) !bg-white mx-auto lg:mx-0">Get Started</button>
+      </div>
+    </div>
+
+    <!-- RESPONSIVE FOOTER SCRIPTS-->
+    <div class="bg-black text-white pb-12" id="footer">
+    </div>
+
+  </footer>
+  <div class="attribution w-(--mobile) lg:w-(--desktop) mx-auto">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="./src/scripts.js"></script>
+</body>
+</html>
