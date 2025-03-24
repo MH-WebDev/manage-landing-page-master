@@ -10,16 +10,15 @@ navigationToggle.addEventListener('click', () => {
         hamburger.classList.add('hidden');
         closed.classList.remove('hidden');
         overlay.classList.remove('hidden')
-        console.log("Open!")
     } else {
         nav.classList.add('hidden');
         hamburger.classList.remove('hidden');
         closed.classList.add('hidden');
         overlay.classList.add('hidden')
-        console.log("Closed!")
     }
 })
 
+// SLIDER CONTENT
 const testamonials = [
     {
         id: 1,
@@ -47,6 +46,7 @@ const testamonials = [
     }
 ]
 
+// SLIDER FUNCTIONALITY
 const slidesContainer = document.getElementById("slides-container");
 const slide = document.querySelector(".slide");
 const prevButton = document.getElementById("slider-previous");
@@ -76,7 +76,6 @@ nextButton.addEventListener("click", () => {
         currentIndex = 0;
     }
         updateSlides();
-    console.log("next")
 });
 
 prevButton.addEventListener("click", () => {
@@ -87,7 +86,6 @@ prevButton.addEventListener("click", () => {
         currentIndex = slides.length - 1;
     }
         updateSlides();
-    console.log("prev")
 });
 
 slidesContainer.innerHTML = "";
@@ -108,7 +106,7 @@ testamonials.forEach(
 
         slidesContainer.appendChild(testamonialDiv);
 
-        // Create a button for the slider indicator
+        // Slider Indicator
         const button = document.createElement('button');
         button.type = "button";
         button.classList.add('w-3', 'h-3', 'rounded-full', 'hover:bg-(--primary)', 'border-(--primary)', 'border-2');
@@ -121,14 +119,13 @@ testamonials.forEach(
             button.classList.add('bg-(--primary)');
         }
 
-        // Append the button to the indicator
         indicator.appendChild(button);
     }
 )
 
 updateSlides();
 
-// Responsive Footer
+// RESPONSIVE FOOTER
 
 const responsiveFooter = () => {
     const footer = document.getElementById("footer");
@@ -137,12 +134,15 @@ const responsiveFooter = () => {
 
     if (window.innerWidth < 1024) {
         footer.innerHTML = `
-        <form class="py-16 w-(--mobile) mx-auto flex flex-row items-center gap-3 justify-center  " id="form">
-            <label for="email" class="sr-only">Email</label>
-            <input type="email" id="email" required placeholder="Updates in your inbox..." class="email bg-white rounded-full px-4 w-[240px] h-[44px] text-(--copy)/50 text-13" />
-            <button type="submit" class="button contact-button !m-0">Go</button>
-        </form>
-        <div class="grid grid-cols-2 gap-6 pb-16 px-18 justify-end w-(--mobile) mx-auto  ">
+        <div class="relative">
+            <form class="pt-16 w-(--mobile) mx-auto flex flex-row items-center gap-3 justify-center" novalidate id="form">
+                <label for="email" class="sr-only">Email</label>
+                <input type="email" id="email" required placeholder="Updates in your inbox..." class="email bg-white rounded-full px-4 w-[240px] h-[44px] text-(--copy)/50 text-13" />
+                <button type="submit" class="button contact-button !m-0" id="submit">Go</button>
+            </form>
+            <p class="text-red-600 text-xs text-center absolute left-0 right-0 -bottom-6 hidden" id="invalid">Please enter a valid email address.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-6 py-16 px-18 justify-end w-(--mobile) mx-auto  ">
             <div class=""><a href="">Home</a></div>
             <div><a href="">Pricing</a></div>
             <div><a href="">Products</a></div>
@@ -163,7 +163,6 @@ const responsiveFooter = () => {
         </div>
         <p class="text-center text-white/50  w-(--mobile) mx-auto">Copyright 2020. All Rights Reserved</p>
         `
-        console.log("Mobile")
     } else {
         footer.innerHTML = `
         <div class="grid grid-cols-3 gap-16 py-12 px-28">
@@ -207,7 +206,6 @@ const responsiveFooter = () => {
             </div>
         </div>
         `
-        console.log("Desktop")
     }
 }
 
@@ -220,21 +218,17 @@ document.getElementById("form").addEventListener("submit", function(event) {
     event.preventDefault();
     let email = document.getElementById("email").value;
 
-    console.log("Raw Email:", email);
-
     email = email.trim();
 
     if (email === "") {
-        console.log("Email input is empty after trimming.");
         document.getElementById("invalid").classList.remove("hidden");
         event.preventDefault();
-        return; // Stop further execution
+        return; 
     }
 
     //Sanitization
 
     email = sanitizeInput(email);
-    console.log("sanitized email: ", email);
 
     let isValid = true;
 
@@ -243,11 +237,9 @@ document.getElementById("form").addEventListener("submit", function(event) {
     if(!validateEmail(email)) {
         document.getElementById("invalid").classList.remove("hidden");
         isValid = false;
-        console.log("Invalid Email")
     } else {
         document.getElementById("invalid").classList.add("hidden");
-        document.getElementById("email").value = "Success!";
-        console.log("Success!")
+        document.getElementById("email").value = "Signup Success!";
     }
 
     if(!isValid) {
